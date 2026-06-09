@@ -33,7 +33,7 @@ jobs:
           pip install -r dev-requirements.txt
 
       - name: 🎛 Rodar linter (flake8)
-        run: flake8 src tests
+        run: flake8 challenges tests
 
       - name: 🧪 Rodar testes
         run: pytest -v --timeout=2

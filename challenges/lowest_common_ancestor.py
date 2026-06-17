@@ -6,4 +6,16 @@ def lowest_common_ancestor(
     value1: int,
     value2: int,
 ) -> int:
-    raise NotImplementedError
+    while root is not None:
+        if (
+            value1 < root.get_value()
+            and value2 < root.get_value()
+        ):
+            root = root.get_left_child()
+        elif (
+            value1 > root.get_value()
+            and value2 > root.get_value()
+        ):
+            root = root.get_right_child()
+        else:
+            return root.get_value()
